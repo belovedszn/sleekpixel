@@ -1,4 +1,4 @@
-#50% Done
+# 50% Done
 
 # React + TypeScript + Vite
 
