@@ -1,0 +1,98 @@
+export const color = [
+  {
+    name: "",
+    className: "color blue",
+    colorCode: "#0000ff",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color yellow",
+    colorCode: "#ffff00",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color orange",
+    colorCode: "#ffa500",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color purple",
+    colorCode: "#800080",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color lime",
+    colorCode: "#00ff00",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color black",
+    colorCode: "#000000",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color brown",
+    colorCode: "#a52a2a",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color pink",
+    colorCode: "#ffc0cb",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color red",
+    colorCode: "#ff0000",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color green",
+    colorCode: "#008000",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color white",
+    colorCode: "#ffffff",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color silver",
+    colorCode: "#c0c0c0",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color gold",
+    colorCode: "#ffd700",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color limegreen",
+    colorCode: "#32cd32",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color chocolate",
+    colorCode: "#d2691e",
+    colorsBox: "colors box",
+  },
+  {
+    name: "",
+    className: "color grey",
+    colorCode: "#808080",
+    colorsBox: "colors box",
+  },
+];
