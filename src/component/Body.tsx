@@ -14,9 +14,9 @@ import Header from "./Header";
 
 export const MyComponent: React.FC = () => {
   const [text, setText] = useState<string>("edit");
-  const downloadImageRef = useRef<HTMLDivElement>(null);
+  const downloadImageRef = useRef<HTMLDivElement | null>(null);
   const [processedBlob, setProcessedBlob] = useState<Blob | null>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [defaultFont, setDefaultFont] = useState<string>("Inter");
   const [defaultColor, setDefaultColor] = useState<string>("color white");
   const [defaultSize, setDefaultSize] = useState<number>(100);
@@ -124,11 +124,16 @@ export const MyComponent: React.FC = () => {
 
   return (
     <>
-      <Header canvasRef={canvasRef} />
+      {/* <Header canvasRef={canvasRef} /> */}
+      <Header processedBlob={processedBlob} />
+
       <section className="main p-4 w-full h-full px-4 flex flex-row justify-start items-start">
         <div className="effect-container flex flex-col items-start gap-8 w-1/12">
           <Fonts defaultFont={defaultFont} setDefaultFont={setDefaultFont} />
-          <Color defaultColor={defaultColor} setDefaultColor={setDefaultColor} />
+          <Color
+            defaultColor={defaultColor}
+            setDefaultColor={setDefaultColor}
+          />
           <FontSize defaultSize={defaultSize} setDefaultSize={setDefaultSize} />
           <div className="direction-section text-md rounded-lg border items-center px-3 py-2">
             <div
@@ -173,6 +178,7 @@ export const MyComponent: React.FC = () => {
             setUploadImage={setUploadImage}
             setProcessedImage={setProcessedImage}
             setProcessedBlob={setProcessedBlob}
+            processedBlob={processedBlob}
           />
         </div>
         <div className="input-area flex flex-col justify-center items-center w-5/6">

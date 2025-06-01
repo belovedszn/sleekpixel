@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { downloadImageFromCanvas } from "@/download";
+//import { downloadImageFromCanvas } from "@/download";
 
 const DownloadBtn = ({ myBlob }: { myBlob: Blob }) => {
   const [blobUrl, setBlobUrl] = useState<string | null>(null);

@@ -14,8 +14,8 @@ interface Props {
   processedImage: string;
   loading: boolean;
   // setDownloadImageRef: (ref: HTMLDivElement) => void;
-  downloadImageRef?: React.RefObject<HTMLDivElement>;
-  canvaRef?: React.RefObject<HTMLCanvasElement>;
+  downloadImageRef?: React.RefObject<HTMLDivElement | null>;
+  canvaRef?: React.RefObject<HTMLCanvasElement | null>;
 }
 
 const ImageBox: React.FC<Props> = ({
@@ -60,17 +60,17 @@ const ImageBox: React.FC<Props> = ({
           overlay.src = processedImage;
           overlay.onload = () => {
             ctx.drawImage(overlay, 0, 0, canvas.width, canvas.height);
-            drawText(ctx); // Draw text after image
+            drawText(ctx, canvas); // Draw text after image
           };
         } else {
-          drawText(ctx);
+          drawText(ctx, canvas);
         }
       };
     } else {
-      drawText(ctx);
+      drawText(ctx, canvas);
     }
 
-    function drawText(ctx: CanvasRenderingContext2D) {
+    function drawText(ctx: CanvasRenderingContext2D,  canvas: HTMLCanvasElement)  {
       ctx.font = `${defaultWeight} ${defaultSize}px ${defaultFont}`;
       ctx.fillStyle = defaultColor;
       ctx.textAlign = "center";
