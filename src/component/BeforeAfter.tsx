@@ -6,26 +6,45 @@ interface Props {
   setDefaultBeforeAfter: (value: number) => void;
 }
 
-const BeforeAfter: React.FC<Props> = ({ defaultBeforeAfter, setDefaultBeforeAfter }) => {
+const BeforeAfter: React.FC<Props> = ({ defaultBeforeAfter }) => {
   const [behindText, setBehindText] = useState<number>();
   const [aboveText, setAboveText] = useState<number>();
 
-  function handleBehindText(event) {
-    setBehindText(event.target.value);
+  function handleBehindText(event: React.MouseEvent<HTMLDivElement>) {
+    const value = event.currentTarget.getAttribute("data-value");
+    setBehindText(Number(value));
   }
 
-  function handleAfterText(event) {
-    setAboveText(event.target.value);
+  function handleAfterText(event: React.MouseEvent<HTMLDivElement>) {
+    const value = event.currentTarget.getAttribute("data-value");
+    setAboveText(Number(value));
   }
+
+  /* function handleBehindText(event: React.MouseEvent<HTMLDivElement>) {
+  setBehindText(defaultBeforeAfter);
+}
+
+function handleAfterText(event: React.MouseEvent<HTMLDivElement>) {
+  setAboveText(defaultBeforeAfter);
+} */
 
   return (
     <div className="before-after effect-box">
-       <div className="behind-text" onClick={handleBehindText} defaultValue={defaultBeforeAfter}>
+      <div
+        className="behind-text"
+        onClick={handleBehindText}
+        defaultValue={defaultBeforeAfter}
+        data-value={defaultBeforeAfter}
+      >
         {behindText}
-       </div>
-       <div className="after-text" onClick={handleAfterText} defaultValue={defaultBeforeAfter}>
+      </div>
+      <div
+        className="after-text"
+        onClick={handleAfterText}
+        defaultValue={defaultBeforeAfter}
+      >
         {aboveText}
-       </div>
+      </div>
     </div>
   );
 };
