@@ -127,7 +127,8 @@ export const MyComponent: React.FC = () => {
       {/* <Header canvasRef={canvasRef} /> */}
       <Header processedBlob={processedBlob} />
 
-      <section className="main p-4 w-full h-full px-4 flex flex-row justify-start items-start">
+      <section //className="main p-4 w-full h-full px-4 flex flex-row justify-start items-start">
+>
         <div className="effect-container flex flex-col items-start gap-8 w-1/12">
           <Fonts defaultFont={defaultFont} setDefaultFont={setDefaultFont} />
           <Color
